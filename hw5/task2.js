@@ -67,6 +67,5 @@ let multiplePositiveNumbers = positiveNumbers.reduce(function (sum, current) {
 console.log('i)', `The result of multiplication of positive elements is - ${multiplePositiveNumbers}`)
 
 // j ==========================================================================================================================================
-taskArray.splice(0, (maxNumberIndex - 1));
-taskArray.splice(1);
-console.log('j)', taskArray, `All elements were removed from the new array except ${taskArray}`);
+let newArray = taskArray.map(elem => elem < maxValue ? 0 : elem);
+console.log('j)', 'All elements in the array are equal to zero except the biggest one', newArray)
