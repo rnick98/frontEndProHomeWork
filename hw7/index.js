@@ -33,10 +33,10 @@ console.log('=========== Task 2 ===========');
 
 function arraySum(totalMarks) {
     let sum = 0;
-    for (var i = 0; i < totalMarks.length; i++) {
+    for (let i = 0; i < totalMarks.length; i++) {
         sum += totalMarks[i];
     }
-    let a = sum / totalMarks.length;
-    console.log(`Average mark of all students - ${a}`);
+    let avrTotalMark = sum / totalMarks.length;
+    console.log(`Average mark of all students - ${avrTotalMark}`);
 }
 arraySum(totalMarks);
