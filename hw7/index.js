@@ -21,22 +21,29 @@ console.log('=========== Task 1 ===========');
 
 const totalMarks = [];
 
-students.forEach((student) => {
-    const marksLength = student.marks.length;
-    const sum = student.marks.reduce((a, b) => a + b, 0);
-    const avrMark = sum / marksLength;
-    console.log('Name: ' + student.name + ' Average mark: ' + avrMark)
-    totalMarks.push(avrMark)
-});
+function getTotalMarks(students) {
+
+    students.forEach((student) => {
+        const marksLength = student.marks.length;
+        const sum = student.marks.reduce((a, b) => a + b, 0);
+        const avrMark = sum / marksLength;
+        console.log('Name: ' + student.name + ' Average mark: ' + avrMark)
+        totalMarks.push(avrMark)
+    });
+    return totalMarks;
+}
+getTotalMarks(students)
 
 console.log('=========== Task 2 ===========');
 
-function arraySum(totalMarks) {
+function printAvgGroupMark(totalMarks) {
+
     let sum = 0;
     for (let i = 0; i < totalMarks.length; i++) {
         sum += totalMarks[i];
     }
+
     let avrTotalMark = sum / totalMarks.length;
     console.log(`Average mark of all students - ${avrTotalMark}`);
 }
-arraySum(totalMarks);
+printAvgGroupMark(totalMarks);
