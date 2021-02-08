@@ -49,5 +49,5 @@ fetch('https://jsonplaceholder.typicode.com/albums')
     })
 
 .catch(() => {
-    console.log('ERROR');
+    console.log('ERROR!');
 })
