@@ -7,8 +7,10 @@ fetch('https://jsonplaceholder.typicode.com/albums')
         const listContainer = document.createElement('ul');
         const titleList = [];
 
-        albomInfo.map(item => {
+        albomInfo.map((item, indx) => {
             const newItem = document.createElement('li');
+            newItem.classList.add('item');
+
             if (item.title) {
                 newItem.setAttribute("id", item.id)
                 newItem.innerHTML = item.title;
@@ -18,6 +20,10 @@ fetch('https://jsonplaceholder.typicode.com/albums')
 
             newItem.addEventListener("click", showAlbomPhoto);
 
+            if (indx === 0) {
+                newItem.click();
+            }
+
             function showAlbomPhoto() {
                 const albumId = item.id;
                 fetch(`https://jsonplaceholder.typicode.com/photos?albumId=${albumId}`)
@@ -25,11 +31,13 @@ fetch('https://jsonplaceholder.typicode.com/albums')
                         return response.json();
                     })
                     .then((albomPhotos) => {
+
                         const rightDiv = document.getElementById('right-column');
+                        rightDiv.innerHTML = "";
                         const photoContainer = document.createElement('ul');
                         const photoList = [];
 
-                        albomPhotos.map(item => {
+                        albomPhotos.map((item) => {
                             const newPhotoItem = document.createElement('li');
                             const image = document.createElement('img');
 
@@ -48,6 +56,6 @@ fetch('https://jsonplaceholder.typicode.com/albums')
         leftDiv.appendChild(listContainer);
     })
 
-.catch(() => {
-    console.log('ERROR!');
+.catch((err) => {
+    console.error(err);
 })
