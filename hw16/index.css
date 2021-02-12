@@ -1,0 +1,22 @@
+h1 {
+    color: #0360b1;
+}
+
+.container {
+    width: 800px;
+    margin-top: 50px;
+}
+
+li {
+    margin: 10px 10px;
+    list-style-type: none;
+}
+
+.btn {
+    margin-bottom: 1rem!important;
+}
+
+#todolist {
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
