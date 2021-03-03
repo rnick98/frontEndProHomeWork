@@ -1,33 +1,35 @@
-class Calc {
+const addition = require('./add');
+const setting = require('./set');
+const subtraction = require('./sub');
+const multiplication = require('./mult');
+const division = require('./div');
 
-    constructor(base) {
-        this._base = base;
+const calculator = {
+    defaultSet: null,
+
+    set(number) {
+        this.defaultSet = setting(number);
+    },
+
+    add(number) {
+        this.defaultSet = addition(this.defaultSet, number)
+        return this.defaultSet;
+    },
+
+    sub(number) {
+        this.defaultSet = subtraction(this.defaultSet, number)
+        return this.defaultSet;
+    },
+
+    mult(number) {
+        this.defaultSet = multiplication(this.defaultSet, number)
+        return this.defaultSet;
+    },
+
+    div(number) {
+        this.defaultSet = division(this.defaultSet, number)
+        return this.defaultSet;
     }
-
-    set(num) {
-        this.base = num;
-    }
-
-    add(num) {
-        this.base += num;
-        return this.base;
-    }
-
-    sub(num) {
-        this.base -= num;
-        return this.base;
-    }
-
-    mult(num) {
-        this.base *= num;
-        return this.base;
-    }
-
-    div(num) {
-        this.base /= num;
-        return this.base;
-    }
-
 }
 
-module.exports = Calc;
+module.exports = calculator;

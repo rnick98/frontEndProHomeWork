@@ -1,5 +1,4 @@
-const Calc = require('./calculator.js');
-const calculator = new Calc();
+const calculator = require('./calculator');
 
 calculator.set(10)
 console.log(calculator.add(2)) // 12
